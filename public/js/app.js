@@ -59045,8 +59045,8 @@ $(document).ready(function ($) {
         resizeBroadcast();
     });
 
-    $('.mobile-sidebar-toggler').click(function () {
-        $('body').toggleClass('sidebar-mobile-show');
+    $('.sidebar-toggler').click(function () {
+        $('body').toggleClass('sidebar-show');
         resizeBroadcast();
     });
 
