@@ -1,4 +1,5 @@
-@extends('layouts.base_html', ['bodyClass' => 'app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden footer-fixed'])
+@extends('layouts.base_html', ['bodyClass' => 'app header-fixed sidebar-fixed sidebar-lg-show aside-menu-fixed aside-menu-hidden footer-fixed '])
+
 
 @section('body')
     <div id="app">
