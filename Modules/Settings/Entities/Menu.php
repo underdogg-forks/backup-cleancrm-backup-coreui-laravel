@@ -14,7 +14,11 @@ class Menu extends Model
     protected $guard_name = 'web';
 
     protected $fillable = [
-        'name', 'url', 'icon', 'active', 'order'
+        'name',
+        'url',
+        'icon',
+        'active',
+        'order'
     ];
 
     protected $dates = [
@@ -52,7 +56,7 @@ class Menu extends Model
         }
 
         if ($this->childs()->exists()) {
-            return !$this->childs->map->isAccessibleBy($user)->every(function($accessbily) {
+            return !$this->childs->map->isAccessibleBy($user)->every(function ($accessbily) {
                 return !$accessbily;
             });
         }

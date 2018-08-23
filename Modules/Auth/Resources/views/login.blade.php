@@ -17,13 +17,14 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-user"></i></span>
                                 </div>
-                                <input type="text" class="form-control {{ $errors->has('username') ? 'is-invalid' : '' }}"
+                                <input type="text"
+                                       class="form-control {{ $errors->has('username') ? 'is-invalid' : '' }}"
                                        name="username" value="{{ old('username') }}"
                                        placeholder="Username" autofocus required>
                                 @if($errors->has('username'))
-                                <div class="invalid-feedback">
-                                    {{ $errors->first('username') }}
-                                </div>
+                                    <div class="invalid-feedback">
+                                        {{ $errors->first('username') }}
+                                    </div>
                                 @endif
                             </div>
                             {{--Password--}}
@@ -31,7 +32,8 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                                 </div>
-                                <input type="password" name="password" class="form-control" placeholder="Password" required>
+                                <input type="password" name="password" class="form-control" placeholder="Password"
+                                       required>
                             </div>
                             <div class="row">
                                 <div class="col-6">

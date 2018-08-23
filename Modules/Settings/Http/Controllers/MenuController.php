@@ -16,9 +16,11 @@ class MenuController extends Controller
     public function index()
     {
         $menus = Menu::has('parent', 0)
-            ->with(['childs' => function($q) {
-                $q->orderBy('order');
-            }])->orderBy('order')->get();
+            ->with([
+                'childs' => function ($q) {
+                    $q->orderBy('order');
+                }
+            ])->orderBy('order')->get();
 
 
         return view('settings::menu.index', compact('menus'));

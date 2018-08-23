@@ -22,9 +22,11 @@ class ViewComposersServiceProvider extends ServiceProvider
 
         \View::composer('layouts.includes.sidebar', function ($view) {
             $menus = Menu::has('parent', 0)
-                ->with(['childs' => function($q) {
-                    $q->orderBy('order');
-                }])->orderBy('order')->get();
+                ->with([
+                    'childs' => function ($q) {
+                        $q->orderBy('order');
+                    }
+                ])->orderBy('order')->get();
 
             $view->with('menus', $menus);
         });

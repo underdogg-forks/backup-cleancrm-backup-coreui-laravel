@@ -6,21 +6,21 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit4f0d9bf49b841703b98dbc8d7866eea3
 {
-    public static $prefixLengthsPsr4 = array (
-        'M' => 
-        array (
-            'Modules\\Auth\\' => 13,
-        ),
+    public static $prefixLengthsPsr4 = array(
+        'M' =>
+            array(
+                'Modules\\Auth\\' => 13,
+            ),
     );
 
-    public static $prefixDirsPsr4 = array (
-        'Modules\\Auth\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/',
-        ),
+    public static $prefixDirsPsr4 = array(
+        'Modules\\Auth\\' =>
+            array(
+                0 => __DIR__ . '/../..' . '/',
+            ),
     );
 
-    public static $classMap = array (
+    public static $classMap = array(
         'Modules\\Auth\\Database\\Seeders\\AuthDatabaseSeeder' => __DIR__ . '/../..' . '/Database/Seeders/AuthDatabaseSeeder.php',
         'Modules\\Auth\\Database\\Seeders\\PermissionsTableSeeder' => __DIR__ . '/../..' . '/Database/Seeders/PermissionsTableSeeder.php',
         'Modules\\Auth\\Database\\Seeders\\UsersTableSeeder' => __DIR__ . '/../..' . '/Database/Seeders/UsersTableSeeder.php',

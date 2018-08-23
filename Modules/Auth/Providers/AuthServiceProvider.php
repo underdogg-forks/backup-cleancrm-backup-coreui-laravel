@@ -2,8 +2,8 @@
 
 namespace Modules\Auth\Providers;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Support\ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -29,13 +29,19 @@ class AuthServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register the service provider.
+     * Register translations.
      *
      * @return void
      */
-    public function register()
+    public function registerTranslations()
     {
-        //
+        $langPath = resource_path('lang/modules/auth');
+
+        if (is_dir($langPath)) {
+            $this->loadTranslationsFrom($langPath, 'auth');
+        } else {
+            $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'auth');
+        }
     }
 
     /**
@@ -46,10 +52,10 @@ class AuthServiceProvider extends ServiceProvider
     protected function registerConfig()
     {
         $this->publishes([
-            __DIR__.'/../Config/config.php' => config_path('auth.php'),
+            __DIR__ . '/../Config/config.php' => config_path('auth.php'),
         ], 'config');
         $this->mergeConfigFrom(
-            __DIR__.'/../Config/config.php', 'auth'
+            __DIR__ . '/../Config/config.php', 'auth'
         );
     }
 
@@ -62,31 +68,15 @@ class AuthServiceProvider extends ServiceProvider
     {
         $viewPath = resource_path('views/modules/auth');
 
-        $sourcePath = __DIR__.'/../Resources/views';
+        $sourcePath = __DIR__ . '/../Resources/views';
 
         $this->publishes([
             $sourcePath => $viewPath
-        ],'views');
+        ], 'views');
 
         $this->loadViewsFrom(array_merge(array_map(function ($path) {
             return $path . '/modules/auth';
         }, \Config::get('view.paths')), [$sourcePath]), 'auth');
-    }
-
-    /**
-     * Register translations.
-     *
-     * @return void
-     */
-    public function registerTranslations()
-    {
-        $langPath = resource_path('lang/modules/auth');
-
-        if (is_dir($langPath)) {
-            $this->loadTranslationsFrom($langPath, 'auth');
-        } else {
-            $this->loadTranslationsFrom(__DIR__ .'/../Resources/lang', 'auth');
-        }
     }
 
     /**
@@ -95,9 +85,19 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function registerFactories()
     {
-        if (! app()->environment('production')) {
+        if (!app()->environment('production')) {
             app(Factory::class)->load(__DIR__ . '/../Database/factories');
         }
+    }
+
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
     }
 
     /**

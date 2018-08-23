@@ -3,7 +3,6 @@
 namespace Modules\Auth\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Eloquent\Model;
 
 class AuthDatabaseSeeder extends Seeder
 {
@@ -15,6 +14,6 @@ class AuthDatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(PermissionsTableSeeder::class);
-         $this->call(UsersTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
     }
 }
