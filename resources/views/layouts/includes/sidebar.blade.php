@@ -50,22 +50,23 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <i class="nav-icon fa fa-refresh"></i> <span>@lang('ip.recurring_invoices')</span>
+                    <i class="nav-icon fas fa-cog"></i>
+                    <span>@lang('ip.recurring_invoices')</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <i class="nav-icon fa fa-credit-card"></i> <span>@lang('ip.payments')</span>
+                    <i class="nav-icon fas fa-tachometer-alt"></i> <span>@lang('ip.payments')</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <i class="nav-icon fa fa-bank"></i> <span>@lang('ip.expenses')</span>
+                    <i class="nav-icon fas fa-cog"></i> <span>@lang('ip.expenses')</span>
                 </a>
             </li>
             <li class="nav-item nav-dropdown">
                 <a class="nav-link nav-dropdown-toggle" href="#">
-                    <i class="nav-icon fa fa-bar-chart-o"></i> <span>@lang('ip.reports')</span>
+                    <i class="nav-icon fas fa-cog"></i> <span>@lang('ip.reports')</span>
                 </a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
