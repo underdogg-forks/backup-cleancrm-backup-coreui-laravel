@@ -1,7 +1,8 @@
 <div class="sidebar">
+    <button class="sidebar-minimizer brand-minimizer" type="button"></button>
     <nav class="sidebar-nav">
         <ul class="nav">
-            @each('layouts.includes._sidebar_item', $menus, 'menu')
+            {{--@each('layouts.includes._sidebar_item', $menus, 'menu')--}}
             {{--<li class="nav-item">--}}
                 {{--<a class="nav-link" href="#">--}}
                     {{--<i class="fas fa-tachometer-alt fa-fw"></i> Dashboard</a>--}}
@@ -34,6 +35,76 @@
                     {{--</li>--}}
                 {{--</ul>--}}
             {{--</li>--}}
+
+{{-- {{ route('recurringInvoices.index') }}--}}
+{{-- {{ route('payments.index') }}      --}}
+{{-- {{ route('expenses.index') }}      --}}
+{{-- {{ route('reports.clientStatement') }}      --}}
+{{-- {{ route('reports.expenseList') }}      --}}
+{{-- {{ route('reports.itemSales') }}      --}}
+{{-- {{ route('reports.paymentsCollected') }}      --}}
+{{-- {{ route('reports.profitLoss') }}      --}}
+{{-- {{ route('reports.taxSummary') }}      --}}
+
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="nav-icon fa fa-refresh"></i> <span>@lang('ip.recurring_invoices')</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="nav-icon fa fa-credit-card"></i> <span>@lang('ip.payments')</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="nav-icon fa fa-bank"></i> <span>@lang('ip.expenses')</span>
+                </a>
+            </li>
+            <li class="nav-item nav-dropdown">
+                <a class="nav-link nav-dropdown-toggle" href="#">
+                    <i class="nav-icon fa fa-bar-chart-o"></i> <span>@lang('ip.reports')</span>
+                </a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            @lang('ip.client_statement')
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            @lang('ip.expense_list')
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            @lang('ip.item_sales')
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            @lang('ip.payments_collected')
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            @lang('ip.profit_and_loss')
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            @lang('ip.revenue_by_client')
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            @lang('ip.tax_summary')
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </nav>
     <button class="sidebar-minimizer brand-minimizer" type="button"></button>
